@@ -10,11 +10,13 @@
 
 ## About
 
-    ShopSavvy is an eCommerce website for customers to browse through a plathera of clothes for all genders and taste. We have an exciting and explosive collection of a variety of clothes, be it beach ware or formals, casuals or anything which our beloved clients require.
+    ShopSavvy is an eCommerce website for customers to browse through a plathera of clothes for all genders and taste.
+    We have an exciting and explosive collection of a variety of clothes, be it beach ware or formals, casuals or anything which our beloved clients require.
 
 ## Purpose
 
-    This website is an effort of a group of enthusiastic developers, who just want to add some exciting spice to their protfolio and create a ecommerce website clone. Please do go through our website.
+    This website is an effort of a group of enthusiastic developers, who just want to add some exciting spice to their protfolio and create a ecommerce website clone.
+    Please do go through our website.
 
 ## System Design
 
