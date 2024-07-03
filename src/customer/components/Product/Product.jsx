@@ -24,8 +24,8 @@ import {
 } from "@heroicons/react/20/solid";
 import { mens_kurta } from "../../../Data/MenKurta";
 import ProductCard from "./ProductCard";
-import { filters } from "./FilterData";
-import { singleFilter } from "./FilterData";
+import { filters } from "../../../Data/FilterData";
+import { singleFilter } from "../../../Data/FilterData";
 import {
   FormControl,
   FormControlLabel,
