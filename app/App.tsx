@@ -18,11 +18,11 @@ function App() {
 
       <Routes>
         <Route path='/*' element={<CustomerRoute />}></Route>
-        
+
       </Routes>
-      
-      
-    
+
+
+
     </div>
   );
 }
