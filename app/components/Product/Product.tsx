@@ -1,17 +1,4 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+'use client'
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -22,10 +9,10 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-import { mens_kurta } from "../../../Data/MenKurta";
+import { mens_kurta } from "../../Data/MenKurta";
 import ProductCard from "./ProductCard";
-import { filters } from "../../../Data/FilterData";
-import { singleFilter } from "../../../Data/FilterData";
+import { filters } from "../../Data/FilterData";
+import { singleFilter } from "../../Data/FilterData";
 import {
   FormControl,
   FormControlLabel,
@@ -34,7 +21,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 import SortIcon from "@mui/icons-material/Sort";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const sortOptions = [
   { name: "Price: Low to High", href: "#", current: false },
@@ -91,11 +78,11 @@ function classNames(...classes) {
 
 export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
+  // const searchParams = useSearchParams();
 
   const handleFilter = (value, sectionId) => {
-    const searchParams = new URLSearchParams(location.search);
+    const searchParams = new URLSearchParams('');
     let filterValue = searchParams.getAll(sectionId);
     if (filterValue.length > 0 && filterValue[0].split(",").includes(value)) {
       filterValue = filterValue[0].split(",").filter((item) => item !== value);
@@ -109,14 +96,14 @@ export default function Product() {
       searchParams.set(sectionId, filterValue.join(","));
     }
     const query = searchParams.toString();
-    navigate({ search: `?${query}` });
+    router.push(`?${query}`);
   };
 
   const handleRadioFilterChange = (e, sectionId) => {
-    const searchParams = new URLSearchParams(location.search);
+    const searchParams = new URLSearchParams('');
     searchParams.set(sectionId, e.target.value);
     const query = searchParams.toString();
-    navigate({ search: `?${query}` });
+    router.push(`?${query}`);
   };
 
   return (

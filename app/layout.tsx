@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './index.css'
+import Navigation from './components/navigation/Navigation'
+import Footer from './components/Footer/Footer'
 
 export const metadata: Metadata = {
     title: 'ShopSavvy',
@@ -14,7 +16,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
+                <nav>
+                    <Navigation />
+                </nav>
                 <div id="root">{children}</div>
+                <Footer />
             </body>
         </html>
     )

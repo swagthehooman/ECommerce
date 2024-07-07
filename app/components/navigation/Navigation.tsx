@@ -1,3 +1,4 @@
+'use client'
 import { Fragment, useState } from "react";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
@@ -8,9 +9,9 @@ import {
 } from "@heroicons/react/24/outline";
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
-import image from "./brand.png";
-import { navigation } from "../../../Data/navigationData";
-import { useNavigate } from "react-router-dom";
+import { navigation } from "../../Data/navigationData";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -18,12 +19,12 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
-  const jwt = localStorage.getItem("jwt");
+  // const jwt = localStorage.getItem("jwt");
 
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -39,7 +40,7 @@ export default function Navigation() {
   };
 
   const handleCategoryClick = (category, section, item, close) => {
-    navigate(`/${category.id}/${section.id}/${item.id}`);
+    router.push(`/${category.id}/${section.id}/${item.id}`);
     close();
   };
 
@@ -245,7 +246,7 @@ export default function Navigation() {
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
                 <span className="sr-only">Your Company</span>
-                <img className="h-10  mr-2" src={image} alt="ShopShavvy" />
+                <Image src={'./brand.png'} className="h-6 w-6" width={100} height={100} alt="ShopSavvy" />
               </div>
 
               {/* Flyout menus */}
@@ -412,7 +413,7 @@ export default function Navigation() {
                         <MenuItem onClick={handleCloseUserMenu}>
                           Profile
                         </MenuItem>
-                        <MenuItem onClick={() => navigate("/account/order")}>
+                        <MenuItem onClick={() => router.push("/account/order")}>
                           My Orders
                         </MenuItem>
                         <MenuItem>Logout</MenuItem>

@@ -1,11 +1,12 @@
 import React from "react";
 import "./ProductCard.css";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
+
 const ProductCard = ({ product }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   return (
     <div
-      onClick={() => navigate(`/product/${5}`)}
+      onClick={() => router.push(`/product/${5}`)}
       className="productCard w-[15rem] m-3 transition-all cursor-pointer"
     >
       <div className="h-[20rem]">
