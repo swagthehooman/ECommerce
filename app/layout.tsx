@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer'
 export const metadata: Metadata = {
     title: 'ShopSavvy',
     description: 'ShopSavvy, an ecommerce website',
+
 }
 
 export default function RootLayout({
@@ -16,9 +17,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <nav>
-                    <Navigation />
-                </nav>
+                <Navigation />
                 <div id="root">{children}</div>
                 <Footer />
             </body>

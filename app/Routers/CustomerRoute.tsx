@@ -8,7 +8,7 @@
 // import ProductDetails from "app/components/ProductDetails/ProductDetails";
 // import HomePage from "app/page";
 // import React from "react";
-// import { Routes, Route } from "react-router-dom";
+// // import { Routes, Route } from "react-router-dom";
 // // import HomePage from "../customer/pages/HomePage/HomePage";
 
 // const CustomerRoute = () => {

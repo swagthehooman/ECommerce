@@ -1,12 +1,12 @@
+'use client'
 import { Grid } from '@mui/material'
-import React from 'react'
 import AdjustIcon from '@mui/icons-material/Adjust';
 import { useRouter } from 'next/navigation';
 
 const OrderCard = () => {
     const router = useRouter();
     return (
-        <div onClick={() => router.push(`/account/order/${5}`)} className='mt-5 p-5 shadow-md hover:shadow-2xl border'>
+        <div onClick={() => router.push(`/account/order/orderdetails`)} className='mt-5 p-5 shadow-md hover:shadow-2xl border'>
             <Grid container spacing={2} sx={{ justifyContent: 'space-between' }}>
                 <Grid item xs={6} >
                     <div className='flex cursor-pointer'>

@@ -12,12 +12,14 @@ import { deepPurple } from "@mui/material/colors";
 import { navigation } from "../../Data/navigationData";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navigation() {
+  //#region functionalities
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
@@ -43,11 +45,10 @@ export default function Navigation() {
     router.push(`/${category.id}/${section.id}/${item.id}`);
     close();
   };
+  //#endregion
 
-  return (
-    <div className="bg-white z-50">
-      {/* Mobile menu */}
-      <Transition.Root show={open} as={Fragment}>
+  {/* Mobile menu */ }
+  {/* <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
             as={Fragment}
@@ -84,7 +85,7 @@ export default function Navigation() {
                   </button>
                 </div>
 
-                {/* Links */}
+                
                 <Tab.Group as="div" className="mt-2">
                   <div className="border-b border-gray-200">
                     <Tab.List className="-mb-px flex space-x-8 px-4">
@@ -220,55 +221,54 @@ export default function Navigation() {
             </Transition.Child>
           </div>
         </Dialog>
-      </Transition.Root>
+      </Transition.Root> */}
+  return (
+    // <div className="bg-white z-50">
 
-      <header className="relative bg-white">
-        {/* <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+
+
+    <header className="relative bg-white">
+      {/* <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Get free delivery on orders over $100
         </p> */}
 
-        <nav
-          aria-label="Top"
-          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
-        >
-          <div className="border-b border-gray-200">
-            <div className="flex h-16 items-center">
-              <button
-                type="button"
-                className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
-                onClick={() => setOpen(true)}
-              >
-                <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open menu</span>
-                <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-              </button>
+      <nav
+        aria-label="Top"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+      >
+        <div className="border-b border-gray-200">
+          <div className="flex h-16 items-center">
+            <button
+              type="button"
+              className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
+              onClick={() => setOpen(true)}
+            >
+              <span className="absolute -inset-0.5" />
+              <span className="sr-only">Open menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
 
-              {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
-                <span className="sr-only">Your Company</span>
-                <Image src={'./brand.png'} className="h-6 w-6" width={100} height={100} alt="ShopSavvy" />
-              </div>
+            {/* Logo */}
+            <Link href={'/'} className="ml-4 flex lg:ml-0">
+              <span className="sr-only">Your Company</span>
+              <Image src='/assets/images/brand.png' className="h-6 w-6" width={100} height={100} alt="ShopSavvy" />
+            </Link>
 
-              {/* Flyout menus */}
-              <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
-                <div className="flex h-full space-x-8">
-                  {navigation.categories.map((category) => (
+            {/* Flyout menus */}
+            <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
+              <div className="flex h-full space-x-8">
+                {navigation.categories.map((category) => {
+                  return (
                     <Popover key={category.name} className="flex">
                       {({ open, close }) => (
                         <>
                           <div className="relative flex">
                             <Popover.Button
-                              className={classNames(
-                                open
-                                  ? "border-indigo-600 text-indigo-600"
-                                  : "border-transparent text-gray-700 hover:text-gray-800",
-                                "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
-                              )}
+                              className={`relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out ${open ? "border - indigo - 600 text-indigo-600" : "border-transparent text-gray-700 hover:text-gray-800"}`}
                             >
                               {category.name}
                             </Popover.Button>
                           </div>
-
                           <Transition
                             as={Fragment}
                             enter="transition ease-out duration-200"
@@ -278,7 +278,7 @@ export default function Navigation() {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                           >
-                            <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
+                            <Popover.Panel className="absolute z-10 inset-x-0 top-full text-sm text-gray-500">
                               {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div
                                 className="absolute inset-0 top-1/2 bg-white shadow"
@@ -339,19 +339,12 @@ export default function Navigation() {
                                                 key={item.name}
                                                 className="flex"
                                               >
-                                                <p
-                                                  onClick={() =>
-                                                    handleCategoryClick(
-                                                      category,
-                                                      section,
-                                                      item,
-                                                      close
-                                                    )
-                                                  }
+                                                <Link
+                                                  href={`/${category.id}/${section.id}/${item.id}`}
                                                   className="cursor-pointer hover:text-gray-800"
                                                 >
                                                   {item.name}
-                                                </p>
+                                                </Link>
                                                 {/* <a href={item.href} className="hover:text-gray-800">
                                                   {item.name}
                                                 </a> */}
@@ -369,95 +362,101 @@ export default function Navigation() {
                         </>
                       )}
                     </Popover>
-                  ))}
 
-                  {navigation.pages.map((page) => (
-                    <a
-                      key={page.name}
-                      href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+
+                  )
+                })}
+
+                {navigation.pages.map((page) => (
+                  <Link
+                    key={page.name}
+                    href={`${page.href}`}
+                    className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                  >
+                    {page.name}
+                  </Link>
+                ))}
+              </div>
+            </Popover.Group>
+
+            {/* Profile button */}
+            <div className="ml-auto flex items-center">
+              <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                {true ? (
+                  <div>
+                    <Avatar
+                      className="text-white"
+                      onClick={handleUserClick}
+                      aria-controls={open ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? "true" : undefined}
+                      sx={{
+                        bgcolor: deepPurple[500],
+                        color: "#fff",
+                        cursor: "pointer",
+                      }}
                     >
-                      {page.name}
-                    </a>
-                  ))}
-                </div>
-              </Popover.Group>
-
-              <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  {true ? (
-                    <div>
-                      <Avatar
-                        className="text-white"
-                        onClick={handleUserClick}
-                        aria-controls={open ? "basic-menu" : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? "true" : undefined}
-                        sx={{
-                          bgcolor: deepPurple[500],
-                          color: "#fff",
-                          cursor: "pointer",
-                        }}
-                      >
-                        A
-                      </Avatar>
-                      <Menu
-                        id="basic-menu"
-                        anchorEl={anchorEl}
-                        open={openUserMenu}
-                        onClose={handleCloseUserMenu}
-                        MenuListProps={{
-                          "aria-labelledby": "basic-button",
-                        }}
-                      >
-                        <MenuItem onClick={handleCloseUserMenu}>
-                          Profile
-                        </MenuItem>
-                        <MenuItem onClick={() => router.push("/account/order")}>
-                          My Orders
-                        </MenuItem>
-                        <MenuItem>Logout</MenuItem>
-                      </Menu>
-                    </div>
-                  ) : (
-                    <Button
-                      onClick={handleOpen}
-                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                      A
+                    </Avatar>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorEl}
+                      open={openUserMenu}
+                      onClose={handleCloseUserMenu}
+                      MenuListProps={{
+                        "aria-labelledby": "basic-button",
+                      }}
                     >
-                      Sign in
-                    </Button>
-                  )}
-                </div>
-
-                {/* Search */}
-                <div className="flex lg:ml-6">
-                  <p className="p-2 text-gray-400 hover:text-gray-500">
-                    <span className="sr-only">Search</span>
-                    <MagnifyingGlassIcon
-                      className="h-6 w-6"
-                      aria-hidden="true"
-                    />
-                  </p>
-                </div>
-
-                {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6">
-                  <Button className="group -m-2 flex items-center p-2">
-                    <ShoppingBagIcon
-                      className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      0
-                    </span>
-                    <span className="sr-only">items in cart, view bag</span>
+                      <MenuItem>
+                        <Link href={'/profile'}>Profile</Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link href={'/account/order'}>My Orders</Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link href={'/login'}>Logout</Link>
+                      </MenuItem>
+                    </Menu>
+                  </div>
+                ) : (
+                  <Button
+                    onClick={handleOpen}
+                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                  >
+                    Sign in
                   </Button>
-                </div>
+                )}
+              </div>
+
+              {/* Search */}
+              <div className="flex lg:ml-6">
+                <p className="p-2 text-gray-400 hover:text-gray-500">
+                  <span className="sr-only">Search</span>
+                  <MagnifyingGlassIcon
+                    className="h-6 w-6"
+                    aria-hidden="true"
+                  />
+                </p>
+              </div>
+
+              {/* Cart */}
+              <div className="ml-4 flow-root lg:ml-6">
+                <Link href='/cart' className="group -m-2 flex items-center p-2">
+                  <ShoppingBagIcon
+                    className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                    aria-hidden="true"
+                  />
+                  <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                    0
+                  </span>
+                  <span className="sr-only">items in cart, view bag</span>
+                </Link>
               </div>
             </div>
           </div>
-        </nav>
-      </header>
-    </div>
+        </div>
+      </nav>
+    </header>
+    // </div>
   );
 }

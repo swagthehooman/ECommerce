@@ -11,8 +11,8 @@ const Footer = () => {
       >
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6">
-            {" "}
-            Company{" "}
+
+            Company
           </Typography>
           <div>
             <Button className="pb-5" variant="text">
@@ -21,107 +21,105 @@ const Footer = () => {
           </div>
           <div>
             <Button className="pb-5" variant="text" >
-              {" "}
-              Blog{" "}
+
+              Blog
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Press{" "}
+            <Button className="pb-5" variant="text" >
+
+              Press
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Jobs{" "}
+            <Button className="pb-5" variant="text" >
+              Jobs
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Partners{" "}
+            <Button className="pb-5" variant="text" >
+              Partners
             </Button>
           </div>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6">
-            {" "}
-            Solutions{" "}
+
+            Solutions
           </Typography>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Marketing{" "}
+            <Button className="pb-5" variant="text" >
+
+              Marketing
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Analytics{" "}
+            <Button className="pb-5" variant="text" >
+
+              Analytics
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Commerce{" "}
+            <Button className="pb-5" variant="text" >
+
+              Commerce
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Insights{" "}
+            <Button className="pb-5" variant="text" >
+
+              Insights
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Support{" "}
+            <Button className="pb-5" variant="text" >
+
+              Support
             </Button>
           </div>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6">
-            {" "}
-            Documentation{" "}
+
+            Documentation
           </Typography>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Guides{" "}
+            <Button className="pb-5" variant="text" >
+
+              Guides
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              API Status{" "}
+            <Button className="pb-5" variant="text" >
+
+              API Status
             </Button>
           </div>
         </Grid>
 
         <Grid item xs={12} sm={6} md={3}>
           <Typography className="pb-5" variant="h6">
-            {" "}
-            Legal{" "}
+
+            Legal
           </Typography>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Claim{" "}
+            <Button className="pb-5" variant="text" >
+
+              Claim
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Privacy{" "}
+            <Button className="pb-5" variant="text" >
+
+              Privacy
             </Button>
           </div>
           <div>
-            text<Button className="pb-5" variant="text" >
-              {" "}
-              Terms{" "}
+            <Button className="pb-5" variant="text" >
+
+              Terms
             </Button>
           </div>
         </Grid>

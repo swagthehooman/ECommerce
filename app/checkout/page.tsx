@@ -6,8 +6,8 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import DeliveryAddressForm from './DeliveryAddressForm';
-import OrderSummary from './OrderSummary';
+import DeliveryAddressForm from '../components/Checkout/DeliveryAddressForm';
+import OrderSummary from '../components/Checkout/OrderSummary';
 import { useState } from 'react';
 
 const steps = ['Login', 'Add Delivery Address', 'Order Summary', 'Payment'];
@@ -52,7 +52,7 @@ export default function Checkout() {
           <>
 
 
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', pt: 2 }}>
               <Button
                 color="inherit"
                 disabled={activeStep === 0}
@@ -61,14 +61,18 @@ export default function Checkout() {
               >
                 Back
               </Button>
-
-
-
-
+              <Button
+                color="inherit"
+                disabled={activeStep === steps.length}
+                onClick={handleNext}
+                sx={{ mr: 1 }}
+              >
+                Next
+              </Button>
             </Box>
 
             <div className='mt-10'>
-              {step == 2 ? <DeliveryAddressForm /> : <OrderSummary />}
+              {activeStep === 2 ? <DeliveryAddressForm /> : <OrderSummary />}
             </div>
           </>
         )}

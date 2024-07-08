@@ -4,23 +4,23 @@ import AddressCard from "../AddressCard/AddressCard";
 
 const DeliveryAddressForm = () => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        const data = new FormData(e.currentTarget)
-        const address = {
-            firstName: data.get("firstName"),
-            lastName: data.get('lastName'),
-            streetAddress: data.get('address'),
-            city: data.get('city'),
-            state: data.get('state'),
-            zipCode: data.get('zip'),
-            mobile:data.get('phoneNumber')
-        }
-        console.log("address",address)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data = new FormData(e.currentTarget)
+    const address = {
+      firstName: data.get("firstName"),
+      lastName: data.get('lastName'),
+      streetAddress: data.get('address'),
+      city: data.get('city'),
+      state: data.get('state'),
+      zipCode: data.get('zip'),
+      mobile: data.get('phoneNumber')
     }
+    console.log("address", address)
+  }
   return (
-    <div>
+    <>
       <Grid container spacing={4}>
         <Grid
           xs={12}
@@ -63,43 +63,43 @@ const DeliveryAddressForm = () => {
                     fullWidth
                     autoComplete="given-name"
                   />
-                              </Grid>
-                              
-                              <Grid item xs={12} >
+                </Grid>
+
+                <Grid item xs={12} >
                   <TextField
                     required
                     id="address"
                     name="address"
                     label="Address"
                     fullWidth
-                                      autoComplete="address"
-                                      multiline
-                                      rows={4}
-                                  />
-                              </Grid>
-                              
-                  <Grid item xs={12} sm={6}>
+                    autoComplete="address"
+                    multiline
+                    rows={4}
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
                   <TextField
                     required
                     id="city"
                     name="city"
                     label="Village/Town/City"
                     fullWidth
-                    
-                    />
-                              </Grid>
-                              
-                              <Grid item xs={12} sm={6}>
+
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
                   <TextField
                     required
                     id="state"
                     name="state"
                     label="State/Province/Region"
                     fullWidth
-                    
-                    />
-                              </Grid>
-                             <Grid item xs={12} sm={6}>
+
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
                   <TextField
                     required
                     id="zip"
@@ -107,36 +107,36 @@ const DeliveryAddressForm = () => {
                     label="Zip/Postal Code"
                     fullWidth
                     autoComplete="shipping postal-code"
-                    />
-                              </Grid> 
-                              
-                              <Grid item xs={12} sm={6}>
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
                   <TextField
                     required
                     id="phoneNumber"
                     name="phoneNumber"
                     label="Phone Number"
                     fullWidth
-                    />
-                              </Grid> 
-                              
-                              <Grid item xs={12} sm={6}>
-                                   <Button
-              sx={{ py:1.5, mt: 2, bgcolor: "RGB(145 85 253)" }}
-              size="large"
-                                      variant="contained"
-                                      type='submit'
-            >
-              Deliver Here
-            </Button>
-                </Grid> 
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
+                  <Button
+                    sx={{ py: 1.5, mt: 2, bgcolor: "RGB(145 85 253)" }}
+                    size="large"
+                    variant="contained"
+                    type='submit'
+                  >
+                    Deliver Here
+                  </Button>
+                </Grid>
 
               </Grid>
             </form>
           </Box>
         </Grid>
       </Grid>
-    </div>
+    </>
   );
 };
 
