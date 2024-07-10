@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
-import { navigation } from "../../Data/navigationData";
+import { navigation } from "../../../public/Data/navigationData";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";

@@ -5,7 +5,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const CartItem = () => {
     return (
-        <div className='p-4 mb-4 shadow-lg border rounded-md'>
+        <div className='p-4 mb-4 shadow-lg border rounded-md' key={'x'}>
             <div className='flex items-center '>
                 <div className='w-[5rem] h-[8rem] lg:w-[9rem] lg:h-[14rem]'>
                     <img className='w-full h-full object-cover object-top' src="https://assets.bonkerscorner.com/uploads/2022/12/25170320/Coder-Oversized-T-shirt-02-1200x1800.jpg" alt="product image" />
@@ -35,7 +35,7 @@ const CartItem = () => {
                 </div>
 
                 <div>
-                    <Button sx={{ color: 'RGB(145 85 253)' }}>
+                    <Button className='text-buttonMain'>
                         Remove
                     </Button>
                 </div>

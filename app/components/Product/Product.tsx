@@ -9,10 +9,10 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-import { mens_kurta } from "../../Data/MenKurta";
+import { mens_kurta } from "../../../public/Data/MenKurta";
 import ProductCard from "./ProductCard";
-import { filters } from "../../Data/FilterData";
-import { singleFilter } from "../../Data/FilterData";
+import { filters } from "../../../public/Data/FilterData";
+import { singleFilter } from "../../../public/Data/FilterData";
 import {
   FormControl,
   FormControlLabel,

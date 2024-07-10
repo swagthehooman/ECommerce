@@ -4,9 +4,9 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import { Box, Grid, LinearProgress, Rating } from "@mui/material";
 import { Button } from "@mui/material";
-import ProductReviewCard from "./ProductReviewCard";
-import { mens_kurta } from "../../Data/MenKurta";
-import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
+import ProductReviewCard from "app/components/ProductDetails/ProductReviewCard";
+import { mens_kurta } from "../../../public/Data/MenKurta";
+import HomeSectionCard from "app/components/HomeSectionCard/HomeSectionCard";
 import { useRouter } from "next/navigation";
 
 const product = {
@@ -204,13 +204,12 @@ export default function ProductDetails() {
                               </RadioGroup.Label>
                               {size.inStock ? (
                                 <span
-                                  className={classNames(
-                                    active ? "border" : "border-2",
-                                    checked
+                                  className={`
+                                    ${active ? "border" : "border-2"} ${checked
                                       ? "border-indigo-500"
-                                      : "border-transparent",
+                                      : "border-transparent"} 
                                     "pointer-events-none absolute -inset-px rounded-md"
-                                  )}
+                                  `}
                                   aria-hidden="true"
                                 />
                               ) : (
@@ -245,12 +244,13 @@ export default function ProductDetails() {
                 <Button
                   onClick={handleAddToCart}
                   variant="contained"
-                  sx={{
-                    px: "2rem",
-                    py: "1rem",
-                    bgcolor: "#9155fd",
-                    mt: "1rem",
-                  }}
+                  // sx={{
+                  //   px: "2rem",
+                  //   py: "1rem",
+                  //   bgcolor: "#9155fd",
+                  //   mt: "1rem",
+                  // }}
+                  className="px-8 py-4 bg-blue-600 mt-4"
                 >
                   Add To Cart
                 </Button>

@@ -1,5 +1,5 @@
 import React from "react";
-import { MainCarouselData } from "../../Data/MainCarouselData";
+import { MainCarouselData } from "../../../public/Data/MainCarouselData";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 

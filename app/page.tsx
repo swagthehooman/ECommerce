@@ -1,7 +1,7 @@
 'use client'
 import MainCarousel from "./components/HomeCarousel/MainCarousel";
 import HomeSectionCarousel from "./components/HomeSectionCarousel/HomeSectionCarousel";
-import { mens_kurta } from "./Data/MenKurta";
+import { mens_kurta } from "../public/Data/MenKurta";
 
 export default function HomePage() {
     return <div>
