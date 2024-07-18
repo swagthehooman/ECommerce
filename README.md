@@ -24,16 +24,16 @@ In progress
 ## Technologies
 
 1) Frontend:
-   a) Frontend library: [React](https://github.com/facebook/create-react-app)
-   b) Styling: [Tailwind css](https://tailwindcss.com/)
+a) Frontend Framework: [Next.js](https://nextjs.org/docs)
+b) Styling: [Tailwind css](https://tailwindcss.com/)
 
-2) Backend:
-   a) Inhouse Rest API: [SpringBoot](https://spring.io/)
+3) Backend:
+a) Inhouse Rest API: [SpringBoot](https://spring.io/)
 
 ## Documentation
 
 1) clone command: `git clone https://github.com/swagthehooman/ECommerce.git`
 2) project setup:
-   a) `npm i`
-   b) `npm run build`
-3) localhost command: ``npm run dev`
+a) `npm i`
+b) `npm run build`
+3) localhost command: `npm run dev`
