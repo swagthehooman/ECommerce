@@ -7,7 +7,8 @@ export const metadata: Metadata = {
     title: 'ShopSavvy',
     description: 'ShopSavvy, an ecommerce website',
     icons: {
-        icon: '/assets/images/brand.png'
+        icon: '/assets/images/brand.png',
+        apple: '/assets/images/brand.png'
     }
 
 }
